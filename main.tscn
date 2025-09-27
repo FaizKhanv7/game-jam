@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://chunypk5a35q8"]
+[gd_scene load_steps=7 format=4 uid="uid://chunypk5a35q8"]
 
 [ext_resource type="Script" uid="uid://b281j0pecvres" path="res://player.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://barq67eed08is" path="res://icon.svg" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://yvxgaaurj68u" path="res://collectable.tscn" id="3_h2yge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(48, 53)
@@ -107,3 +108,12 @@ position_smoothing_enabled = true
 scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAAAAAoAAAABAAAAAAABAAoAAAABAAAAAAACAAoAAAABAAAAAAADAAoAAAABAAAAAAAEAAoAAAABAAAAAAAFAAoAAAABAAAAAAAGAAoAAAABAAAAAAAHAAoAAAABAAAAAAAIAAoAAAABAAAAAAAJAAoAAAABAAAAAAAJAAkAAAABAAAAAAAJAAgAAAABAAAAAAAKAAgAAAABAAAAAAALAAgAAAABAAAAAAAMAAgAAAABAAAAAAANAAgAAAABAAAAAAANAAkAAAABAAAAAAANAAoAAAABAAAAAAAOAAoAAAABAAAAAAAPAAoAAAABAAAAAAAQAAoAAAABAAAAAAARAAoAAAABAAAAAAASAAoAAAABAAAAAAATAAoAAAABAAAAAAAUAAoAAAABAAAAAAAVAAoAAAABAAAAAAAWAAoAAAABAAAAAAAaAAoAAAABAAAAAAAbAAoAAAABAAAAAAAcAAoAAAABAAAAAAAdAAoAAAABAAAAAAAeAAoAAAABAAAAAAAfAAoAAAABAAAAAAAiAAgAAAABAAAAAAAjAAgAAAABAAAAAAAkAAgAAAABAAAAAAAnAAUAAAABAAAAAAAoAAUAAAABAAAAAAApAAUAAAABAAAAAAArAAEAAAABAAAAAAAsAAEAAAABAAAAAAAtAAEAAAABAAAAAAAuAAEAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_1bvp3")
+
+[node name="Collectable" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(476, 352)
+
+[node name="Collectable2" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(554, 349)
+
+[node name="Collectable3" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(632, 351)
