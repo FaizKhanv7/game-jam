@@ -117,3 +117,6 @@ position = Vector2(554, 349)
 
 [node name="Collectable3" parent="." instance=ExtResource("3_h2yge")]
 position = Vector2(632, 351)
+
+[node name="Collectable4" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(779, 432)
