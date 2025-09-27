@@ -15,6 +15,11 @@ run/main_scene="uid://chunypk5a35q8"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [input]
 
 jump={
@@ -44,4 +49,4 @@ left={
 [rendering]
 
 renderer/rendering_method="mobile"
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+environment/defaults/default_clear_color=Color(0.37245482, 0.5677467, 1, 1)
