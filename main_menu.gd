@@ -28,4 +28,4 @@ func _on_exit_pressed():
 
 
 func _on_back_options_pressed() -> void:
-	_ready()
+	_ready( 	)

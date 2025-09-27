@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://chunypk5a35q8"]
 
-[ext_resource type="Script" uid="uid://cnkk40lnqk2fg" path="res://game_manager.gd" id="1_y4dr7"]
+[ext_resource type="Script" path="res://game_manager.gd" id="1_y4dr7"]
 [ext_resource type="Script" uid="uid://b281j0pecvres" path="res://player.gd" id="2_didp7"]
 [ext_resource type="Texture2D" uid="uid://barq67eed08is" path="res://icon.svg" id="3_2a60c"]
 [ext_resource type="PackedScene" uid="uid://yvxgaaurj68u" path="res://Scenes/collectable.tscn" id="4_4iphx"]

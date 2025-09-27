@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="Game Jam"
-run/main_scene="uid://b768rteou8asx"
+run/main_scene="uid://d1iductknuh4t"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
