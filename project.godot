@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Game Jam"
-run/main_scene="uid://chunypk5a35q8"
+run/main_scene="uid://d1iductknuh4t"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
