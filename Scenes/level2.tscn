@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cnkk40lnqk2fg" path="res://game_manager.gd" id="1_r6vdu"]
 [ext_resource type="Script" uid="uid://b281j0pecvres" path="res://player.gd" id="2_21xmu"]
 [ext_resource type="Texture2D" uid="uid://dwm3ddiyrt1df" path="res://Cloud Tileset.png" id="2_mhlpv"]
-[ext_resource type="PackedScene" uid="uid://b768rteou8asx" path="res://main_menu.tscn" id="5_onqnr"]
+[ext_resource type="PackedScene" uid="uid://d1iductknuh4t" path="res://main_menu.tscn" id="5_onqnr"]
 [ext_resource type="PackedScene" uid="uid://bif2wbml7cl2u" path="res://Scenes/finish.tscn" id="5_qulpo"]
 [ext_resource type="Texture2D" uid="uid://s2x3i0q2hhld" path="res://Idle.png" id="6_mhlpv"]
 [ext_resource type="Texture2D" uid="uid://d8b37womo33b" path="res://Jump.png" id="7_ng020"]
@@ -302,3 +302,5 @@ theme_override_font_sizes/font_size = 25
 text = "Points: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
