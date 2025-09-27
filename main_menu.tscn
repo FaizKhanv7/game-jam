@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1iductknuh4t"]
+[gd_scene load_steps=9 format=3 uid="uid://d1iductknuh4t"]
 
 [ext_resource type="Texture2D" uid="uid://cim1gwv1lgw83" path="res://srithan .jpg" id="1_7vrkn"]
-[ext_resource type="Script" uid="uid://bp31kunt6qkdg" path="res://main_menu.gd" id="1_fu7sn"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_fu7sn"]
 [ext_resource type="FontFile" uid="uid://ble8nehe03hgb" path="res://Fantasm and Secrets.ttf" id="2_fu7sn"]
 [ext_resource type="AudioStream" uid="uid://vi3i7uibu74g" path="res://01. God of War III Overture.mp3" id="4_jix8l"]
 

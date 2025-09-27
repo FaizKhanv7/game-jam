@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bif2wbml7cl2u"]
+[gd_scene load_steps=4 format=3 uid="uid://bif2wbml7cl2u"]
 
+[ext_resource type="Script" uid="uid://dlyncysd05t7t" path="res://Scenes/finish.gd" id="1_o6pr6"]
 [ext_resource type="Texture2D" uid="uid://dup4gvkxqgjcx" path="res://portal-image.png" id="1_yp4eo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bt3yw"]
@@ -7,6 +8,7 @@ radius = 17.0
 height = 56.0
 
 [node name="Finish" type="Area2D"]
+script = ExtResource("1_o6pr6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -16,3 +18,5 @@ texture = ExtResource("1_yp4eo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_bt3yw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
