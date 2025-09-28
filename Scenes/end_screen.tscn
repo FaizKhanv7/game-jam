@@ -1,6 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://pkgt4ysg67rs"]
+[gd_scene load_steps=13 format=3 uid="uid://455wycojhvpy"]
 
-[ext_resource type="Script" path="res://Scenes/ENDSCREEN.gd" id="1_f2mtv"]
+[ext_resource type="Script" uid="uid://c8r835q6ipb6f" path="res://Scenes/play_again!.gd" id="1_f2mtv"]
+[ext_resource type="FontFile" uid="uid://ble8nehe03hgb" path="res://Fantasm and Secrets.ttf" id="2_1gwaw"]
+[ext_resource type="Script" uid="uid://6djd28ofy6sw" path="res://Scenes/go_back_to_menu.gd" id="2_bhpww"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3iaq5"]
 bg_color = Color(0.6, 0.6, 0.6, 0.45490196)
@@ -45,9 +47,17 @@ bg_color = Color(1, 1, 1, 0.21568628)
 
 [node name="Button_Manager" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VSlider" type="VSlider" parent="Button_Manager"]
 layout_mode = 0
@@ -100,6 +110,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_xu7hh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pmjk2")
 theme_override_styles/hover = SubResource("StyleBoxFlat_d75mr")
 text = "Go Back to Main Menu!"
+script = ExtResource("2_bhpww")
 
 [node name="Exit Game" type="Button" parent="Button_Manager/VSlider/VSlider/VSlider"]
 layout_mode = 1
@@ -115,6 +126,20 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_be1gp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kaxt3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2afhe")
 text = "Exit Game "
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 309.0
+offset_right = 739.0
+offset_bottom = 104.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_1gwaw")
+theme_override_font_sizes/font_size = 55
+text = "You Have Failed Us..."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button_Manager/VSlider/VSlider/VSlider/Play Again!" to="Button_Manager/VSlider/VSlider/VSlider/Exit Game" method="_on_play_again_pressed"]
 [connection signal="pressed" from="Button_Manager/VSlider/VSlider/VSlider/Go back to Menu" to="Button_Manager/VSlider/VSlider/VSlider/Exit Game" method="_on_go_back_to_menu_pressed"]

@@ -11,6 +11,7 @@ func _ready():
 	options.visible = false
 	
 func _on_start_pressed():
+	Global.lives = 10
 	get_tree().change_scene_to_file("res://Scenes/level1.tscn")
 
 

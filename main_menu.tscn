@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://ble8nehe03hgb" path="res://Fantasm and Secrets.ttf" id="2_fu7sn"]
 [ext_resource type="Texture2D" uid="uid://cy5tnrc16l7m2" path="res://Assets/697 Rhone Street.png" id="2_glbon"]
 [ext_resource type="AudioStream" uid="uid://vi3i7uibu74g" path="res://01. God of War III Overture.mp3" id="4_jix8l"]
-[ext_resource type="Script" path="res://audio_control.gd" id="5_glbon"]
+[ext_resource type="Script" uid="uid://cmn0cmxas1fio" path="res://audio_control.gd" id="5_glbon"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
 texture = ExtResource("2_glbon")

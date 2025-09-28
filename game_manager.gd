@@ -24,7 +24,7 @@ func decrease_health(amount: int = 1) -> void:
 	_update_hearts()
 
 	if Global.lives == 0:
-		get_tree().change_scene_to_file("res://main_menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/end_screen.tscn")
 
 func _update_hearts() -> void:
 	var lives = Global.lives
