@@ -337,14 +337,14 @@ animations = [{
 }],
 "loop": false,
 "name": &"super",
-"speed": 8.0
+"speed": 7.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwu6c"]
-size = Vector2(85.5, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxhxl"]
 size = Vector2(44.25, 75.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imc8n"]
+size = Vector2(86.5, 33)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4iphx"]
 texture = ExtResource("8_4iphx")
@@ -466,13 +466,16 @@ position_smoothing_enabled = true
 [node name="AttackArea" type="Area2D" parent="SceneObjects/Player"]
 position = Vector2(64, 416)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="SceneObjects/Player/AttackArea"]
-position = Vector2(48.25, -32)
-shape = SubResource("RectangleShape2D_wwu6c")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/Player/AttackArea"]
 position = Vector2(28, -1)
 shape = SubResource("RectangleShape2D_rxhxl")
+
+[node name="AttackArea2" type="Area2D" parent="SceneObjects/Player"]
+position = Vector2(64, 416)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/Player/AttackArea2"]
+position = Vector2(47.75, -27)
+shape = SubResource("RectangleShape2D_imc8n")
 
 [node name="AttackTimer" type="Timer" parent="SceneObjects/Player"]
 one_shot = true
@@ -489,7 +492,7 @@ position = Vector2(522, 391)
 position = Vector2(571, 389)
 
 [node name="Collectable4" parent="SceneObjects/Collectables" instance=ExtResource("4_4iphx")]
-position = Vector2(1849, 259)
+position = Vector2(1463, 399)
 
 [node name="Finish" parent="SceneObjects" instance=ExtResource("5_jgkgd")]
 visible = false
@@ -506,9 +509,6 @@ tile_set = SubResource("TileSet_jgkgd")
 
 [node name="DogEnemy" parent="SceneObjects/Enemies" instance=ExtResource("11_cpkqv")]
 position = Vector2(974, 379)
-
-[node name="DogEnemy2" parent="SceneObjects/Enemies" instance=ExtResource("11_cpkqv")]
-position = Vector2(1705, 236)
 
 [node name="Area2D" type="Area2D" parent="SceneObjects"]
 position = Vector2(1735, 550)
