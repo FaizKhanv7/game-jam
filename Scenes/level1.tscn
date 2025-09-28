@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://we4bti5wwmh3" path="res://Assets/Hurt.png" id="6_bdr3p"]
 [ext_resource type="Texture2D" uid="uid://c8g8qr0kmaitd" path="res://Run.png" id="6_cpkqv"]
 [ext_resource type="Texture2D" uid="uid://bp2bf376ijknl" path="res://Scenes/TileSet.png" id="8_4iphx"]
-[ext_resource type="PackedScene" path="res://Scenes/level2.tscn" id="9_d1mwp"]
+[ext_resource type="PackedScene" uid="uid://doj6og0wepgir" path="res://Scenes/level2.tscn" id="9_d1mwp"]
 [ext_resource type="PackedScene" uid="uid://d0mmya03u8c3e" path="res://Scenes/dog_enemy.tscn" id="11_cpkqv"]
 [ext_resource type="Script" uid="uid://dda8pm0fwq1se" path="res://Scenes/fall_area.gd" id="12_d1mwp"]
 [ext_resource type="Texture2D" uid="uid://bbltd1qviqgtj" path="res://Assets/heart.png" id="13_d1mwp"]

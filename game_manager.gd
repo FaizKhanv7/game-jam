@@ -1,24 +1,28 @@
 extends Node
+
 @onready var points_label: Label = $"../UI/Panel/PointsLabel"
 @onready var portal: Area2D = $"../SceneObjects/Finish" 
 
 @export var hearts: Array[TextureRect]        # drag TextureRects here
 const full_heart: Texture2D = preload("res://Assets/heart.png")
 const half_heart: Texture2D = preload("res://Assets/halfheart.png")
-const empty_heart: Texture2D = preload("res://Assets/emptyheart.png")           # assign image in Inspector
+const empty_heart: Texture2D = preload("res://Assets/emptyheart.png")
 
 var points: int = 0
-var lives: int = 10   # 10 = 5 full hearts
 
-func decrease_health(amount: int = 1) -> void:
-	lives = max(lives - amount, 0)
+func _ready() -> void:
 	_update_hearts()
 
-	if lives == 0:
+func decrease_health(amount: int = 1) -> void:
+	Global.lives = max(Global.lives - amount, 0)
+	_update_hearts()
+
+	if Global.lives == 0:
 		get_tree().change_scene_to_file("res://main_menu.tscn")
 
 func _update_hearts() -> void:
-	var full_hearts: int = lives / 2   # integer division (no warning)
+	var lives = Global.lives
+	var full_hearts: int = lives / 2 
 	var has_half: bool = (lives % 2) == 1
 
 	for i in hearts.size():
