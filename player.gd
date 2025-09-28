@@ -72,10 +72,10 @@ func play_hurt():
 @onready var attack_timer: Timer = $AttackTimer
 
 func perform_attack():
-	attacking = true
-	sprite_2d.play("attack")
-
-	# Lose half a heart per attack
+	attacking = true 
+	sprite_2d.play("attack") 
+ 
+	#  Lose half a heart per attack
 	game_manager.decrease_health(1)
 
 	# Enable the hitbox for the duration of the attack

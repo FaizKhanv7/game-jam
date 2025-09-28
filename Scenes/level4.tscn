@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://n5jluhls8263"]
+[gd_scene load_steps=47 format=4 uid="uid://n5jluhls8263"]
 
 [ext_resource type="Script" uid="uid://cnkk40lnqk2fg" path="res://game_manager.gd" id="1_7u67b"]
 [ext_resource type="Texture2D" uid="uid://beko1xs8kycuq" path="res://ChatGPT Image Sep 27, 2025, 05_30_58 PM.png" id="2_adi6q"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://d8b37womo33b" path="res://Jump.png" id="8_lhhwt"]
 [ext_resource type="FontFile" uid="uid://ble8nehe03hgb" path="res://Fantasm and Secrets.ttf" id="9_7u67b"]
 [ext_resource type="Texture2D" uid="uid://we4bti5wwmh3" path="res://Assets/Hurt.png" id="9_mg2ol"]
-[ext_resource type="Texture2D" uid="uid://c8g8qr0kmaitd" path="res://Run.png" id="9_ooiku"]
 [ext_resource type="Script" uid="uid://dda8pm0fwq1se" path="res://Scenes/fall_area.gd" id="12_gewku"]
 [ext_resource type="Texture2D" uid="uid://bbltd1qviqgtj" path="res://Assets/heart.png" id="13_lhhwt"]
 [ext_resource type="PackedScene" uid="uid://yvxgaaurj68u" path="res://Scenes/collectable.tscn" id="13_mg2ol"]
@@ -943,35 +942,27 @@ atlas = ExtResource("8_lhhwt")
 region = Rect2(1024, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x7ktg"]
-atlas = ExtResource("9_ooiku")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_164vy"]
-atlas = ExtResource("9_ooiku")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2s1u"]
-atlas = ExtResource("9_ooiku")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4otl7"]
-atlas = ExtResource("9_ooiku")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p68j0"]
-atlas = ExtResource("9_ooiku")
 region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4ifa"]
-atlas = ExtResource("9_ooiku")
 region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_daeh6"]
-atlas = ExtResource("9_ooiku")
 region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dr50b"]
-atlas = ExtResource("9_ooiku")
 region = Rect2(896, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nesy5"]

@@ -1,18 +1,16 @@
-[gd_scene load_steps=49 format=4 uid="uid://br0hnfvtlhdvp"]
+[gd_scene load_steps=49 format=4 uid="uid://by75x6iywp6rl"]
 
 [ext_resource type="Texture2D" uid="uid://cdtss0m27ba3m" path="res://Scenes/backgroundShapes.png" id="1_2a60c"]
 [ext_resource type="Script" uid="uid://cnkk40lnqk2fg" path="res://game_manager.gd" id="1_y4dr7"]
 [ext_resource type="Script" uid="uid://b281j0pecvres" path="res://player.gd" id="2_didp7"]
 [ext_resource type="PackedScene" uid="uid://yvxgaaurj68u" path="res://Scenes/collectable.tscn" id="4_4iphx"]
-[ext_resource type="Texture2D" uid="uid://s2x3i0q2hhld" path="res://Idle.png" id="4_bs12r"]
 [ext_resource type="Texture2D" uid="uid://ycojxjl0y72b" path="res://Attack_1.png" id="4_u1b78"]
 [ext_resource type="PackedScene" uid="uid://bif2wbml7cl2u" path="res://Scenes/finish.tscn" id="5_jgkgd"]
 [ext_resource type="Texture2D" uid="uid://d8b37womo33b" path="res://Jump.png" id="5_rqhku"]
 [ext_resource type="Texture2D" uid="uid://we4bti5wwmh3" path="res://Assets/Hurt.png" id="6_bdr3p"]
-[ext_resource type="Texture2D" uid="uid://c8g8qr0kmaitd" path="res://Run.png" id="6_cpkqv"]
 [ext_resource type="Texture2D" uid="uid://bp2bf376ijknl" path="res://Scenes/TileSet.png" id="8_4iphx"]
 [ext_resource type="PackedScene" uid="uid://doj6og0wepgir" path="res://Scenes/level2.tscn" id="9_d1mwp"]
-[ext_resource type="PackedScene" uid="uid://d0mmya03u8c3e" path="res://Scenes/dog_enemy.tscn" id="11_cpkqv"]
+[ext_resource type="PackedScene" path="res://Scenes/dog_enemy.tscn" id="11_cpkqv"]
 [ext_resource type="Script" uid="uid://dda8pm0fwq1se" path="res://Scenes/fall_area.gd" id="12_d1mwp"]
 [ext_resource type="Texture2D" uid="uid://bbltd1qviqgtj" path="res://Assets/heart.png" id="13_d1mwp"]
 
@@ -35,32 +33,35 @@ region = Rect2(256, 0, 128, 128)
 atlas = ExtResource("4_u1b78")
 region = Rect2(384, 0, 128, 128)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qrg6c"]
+load_path = "res://.godot/imported/Water boss.png-47b536dcc3f9971357fc443820977699.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_d1mwp"]
-atlas = ExtResource("4_bs12r")
+atlas = SubResource("CompressedTexture2D_qrg6c")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u1b78"]
-atlas = ExtResource("4_bs12r")
+atlas = SubResource("CompressedTexture2D_qrg6c")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bdr3p"]
-atlas = ExtResource("4_bs12r")
+atlas = SubResource("CompressedTexture2D_qrg6c")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wwu6c"]
-atlas = ExtResource("4_bs12r")
+atlas = SubResource("CompressedTexture2D_qrg6c")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yymuf"]
-atlas = ExtResource("4_bs12r")
+atlas = SubResource("CompressedTexture2D_qrg6c")
 region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_esggg"]
-atlas = ExtResource("4_bs12r")
+atlas = SubResource("CompressedTexture2D_qrg6c")
 region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nolpu"]
-atlas = ExtResource("4_bs12r")
+atlas = SubResource("CompressedTexture2D_qrg6c")
 region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nstho"]
@@ -95,36 +96,39 @@ region = Rect2(896, 0, 128, 128)
 atlas = ExtResource("5_rqhku")
 region = Rect2(1024, 0, 128, 128)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1x0xh"]
+load_path = "res://.godot/imported/Enemy .png-593c61e561d1e630c43cbbe01ae79d6a.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_x7ktg"]
-atlas = ExtResource("6_cpkqv")
+atlas = SubResource("CompressedTexture2D_1x0xh")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_164vy"]
-atlas = ExtResource("6_cpkqv")
+atlas = SubResource("CompressedTexture2D_1x0xh")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2s1u"]
-atlas = ExtResource("6_cpkqv")
+atlas = SubResource("CompressedTexture2D_1x0xh")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4otl7"]
-atlas = ExtResource("6_cpkqv")
+atlas = SubResource("CompressedTexture2D_1x0xh")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p68j0"]
-atlas = ExtResource("6_cpkqv")
+atlas = SubResource("CompressedTexture2D_1x0xh")
 region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4ifa"]
-atlas = ExtResource("6_cpkqv")
+atlas = SubResource("CompressedTexture2D_1x0xh")
 region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_daeh6"]
-atlas = ExtResource("6_cpkqv")
+atlas = SubResource("CompressedTexture2D_1x0xh")
 region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dr50b"]
-atlas = ExtResource("6_cpkqv")
+atlas = SubResource("CompressedTexture2D_1x0xh")
 region = Rect2(896, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nstho"]
@@ -313,7 +317,7 @@ sources/0 = SubResource("TileSetAtlasSource_4iphx")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u1b78"]
 
-[node name="Main" type="Node"]
+[node name="Main3" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
