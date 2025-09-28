@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ycojxjl0y72b"
-path="res://.godot/imported/Attack_1.png-e09ca2498cbb67c6da9bc770b4b63c7e.ctex"
+uid="uid://dojg01uo8syr1"
+path="res://.godot/imported/watertiles.png-929a4017c459d107bc0ce2ecd659dd0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Attack_1.png"
-dest_files=["res://.godot/imported/Attack_1.png-e09ca2498cbb67c6da9bc770b4b63c7e.ctex"]
+source_file="res://watertiles.png"
+dest_files=["res://.godot/imported/watertiles.png-929a4017c459d107bc0ce2ecd659dd0b.ctex"]
 
 [params]
 
