@@ -5,8 +5,6 @@ extends Control
 	
 	
 
-func _process(delta):
-	pass
 	
 func _ready():
 	main_buttons.visible = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dojg01uo8syr1"
-path="res://.godot/imported/watertiles.png-929a4017c459d107bc0ce2ecd659dd0b.ctex"
+uid="uid://bbltd1qviqgtj"
+path="res://.godot/imported/heart.png-fb184e3028b962627b1631c99ec24f8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://watertiles.png"
-dest_files=["res://.godot/imported/watertiles.png-929a4017c459d107bc0ce2ecd659dd0b.ctex"]
+source_file="res://Assets/heart.png"
+dest_files=["res://.godot/imported/heart.png-fb184e3028b962627b1631c99ec24f8f.ctex"]
 
 [params]
 

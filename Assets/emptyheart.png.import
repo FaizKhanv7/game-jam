@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwm3ddiyrt1df"
-path="res://.godot/imported/Cloud Tileset.png-c0ae293cce1a28ab7b2ad6684fc08263.ctex"
+uid="uid://bic183xxoqbjj"
+path="res://.godot/imported/emptyheart.png-505b4b35a559a559abde555e0421a7ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cloud Tileset.png"
-dest_files=["res://.godot/imported/Cloud Tileset.png-c0ae293cce1a28ab7b2ad6684fc08263.ctex"]
+source_file="res://Assets/emptyheart.png"
+dest_files=["res://.godot/imported/emptyheart.png-505b4b35a559a559abde555e0421a7ba.ctex"]
 
 [params]
 

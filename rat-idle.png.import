@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0af2dr2nqrfo"
-path="res://.godot/imported/coins.png-cb6fe640602eec73cb41fd209ac3bb9f.ctex"
+uid="uid://diob02syerqhw"
+path="res://.godot/imported/rat-idle.png-303e2a57dae6744ed65bbaf99677999b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://coins.png"
-dest_files=["res://.godot/imported/coins.png-cb6fe640602eec73cb41fd209ac3bb9f.ctex"]
+source_file="res://rat-idle.png"
+dest_files=["res://.godot/imported/rat-idle.png-303e2a57dae6744ed65bbaf99677999b.ctex"]
 
 [params]
 
