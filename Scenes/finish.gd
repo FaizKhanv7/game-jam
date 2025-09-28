@@ -8,5 +8,5 @@ func _on_body_entered(body):
 
 func _change_scene():
 	if (Global.lives < 10):
-		Global.lives += 1
+		Global.lives += 7
 	get_tree().change_scene_to_packed(target_level)

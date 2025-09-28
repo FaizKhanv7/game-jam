@@ -1,17 +1,21 @@
-[gd_scene load_steps=49 format=4 uid="uid://by75x6iywp6rl"]
+[gd_scene load_steps=66 format=4 uid="uid://br0hnfvtlhdvp"]
 
 [ext_resource type="Texture2D" uid="uid://cdtss0m27ba3m" path="res://Scenes/backgroundShapes.png" id="1_2a60c"]
 [ext_resource type="Script" uid="uid://cnkk40lnqk2fg" path="res://game_manager.gd" id="1_y4dr7"]
 [ext_resource type="Script" uid="uid://b281j0pecvres" path="res://player.gd" id="2_didp7"]
 [ext_resource type="PackedScene" uid="uid://yvxgaaurj68u" path="res://Scenes/collectable.tscn" id="4_4iphx"]
+[ext_resource type="Texture2D" uid="uid://s2x3i0q2hhld" path="res://Idle.png" id="4_bs12r"]
 [ext_resource type="Texture2D" uid="uid://ycojxjl0y72b" path="res://Attack_1.png" id="4_u1b78"]
 [ext_resource type="PackedScene" uid="uid://bif2wbml7cl2u" path="res://Scenes/finish.tscn" id="5_jgkgd"]
 [ext_resource type="Texture2D" uid="uid://d8b37womo33b" path="res://Jump.png" id="5_rqhku"]
 [ext_resource type="Texture2D" uid="uid://we4bti5wwmh3" path="res://Assets/Hurt.png" id="6_bdr3p"]
+[ext_resource type="Texture2D" uid="uid://c8g8qr0kmaitd" path="res://Run.png" id="6_cpkqv"]
 [ext_resource type="Texture2D" uid="uid://bp2bf376ijknl" path="res://Scenes/TileSet.png" id="8_4iphx"]
 [ext_resource type="PackedScene" uid="uid://doj6og0wepgir" path="res://Scenes/level2.tscn" id="9_d1mwp"]
-[ext_resource type="PackedScene" path="res://Scenes/dog_enemy.tscn" id="11_cpkqv"]
+[ext_resource type="Texture2D" uid="uid://763t3okqcaij" path="res://Assets/Flame_jet.png" id="9_wwu6c"]
+[ext_resource type="PackedScene" uid="uid://d0mmya03u8c3e" path="res://Scenes/dog_enemy.tscn" id="11_cpkqv"]
 [ext_resource type="Script" uid="uid://dda8pm0fwq1se" path="res://Scenes/fall_area.gd" id="12_d1mwp"]
+[ext_resource type="FontFile" uid="uid://ble8nehe03hgb" path="res://Fantasm and Secrets.ttf" id="12_u1b78"]
 [ext_resource type="Texture2D" uid="uid://bbltd1qviqgtj" path="res://Assets/heart.png" id="13_d1mwp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
@@ -33,35 +37,32 @@ region = Rect2(256, 0, 128, 128)
 atlas = ExtResource("4_u1b78")
 region = Rect2(384, 0, 128, 128)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qrg6c"]
-load_path = "res://.godot/imported/Water boss.png-47b536dcc3f9971357fc443820977699.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_d1mwp"]
-atlas = SubResource("CompressedTexture2D_qrg6c")
+atlas = ExtResource("4_bs12r")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u1b78"]
-atlas = SubResource("CompressedTexture2D_qrg6c")
+atlas = ExtResource("4_bs12r")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bdr3p"]
-atlas = SubResource("CompressedTexture2D_qrg6c")
+atlas = ExtResource("4_bs12r")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wwu6c"]
-atlas = SubResource("CompressedTexture2D_qrg6c")
+atlas = ExtResource("4_bs12r")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yymuf"]
-atlas = SubResource("CompressedTexture2D_qrg6c")
+atlas = ExtResource("4_bs12r")
 region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_esggg"]
-atlas = SubResource("CompressedTexture2D_qrg6c")
+atlas = ExtResource("4_bs12r")
 region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nolpu"]
-atlas = SubResource("CompressedTexture2D_qrg6c")
+atlas = ExtResource("4_bs12r")
 region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nstho"]
@@ -96,40 +97,93 @@ region = Rect2(896, 0, 128, 128)
 atlas = ExtResource("5_rqhku")
 region = Rect2(1024, 0, 128, 128)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1x0xh"]
-load_path = "res://.godot/imported/Enemy .png-593c61e561d1e630c43cbbe01ae79d6a.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_x7ktg"]
-atlas = SubResource("CompressedTexture2D_1x0xh")
+atlas = ExtResource("6_cpkqv")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_164vy"]
-atlas = SubResource("CompressedTexture2D_1x0xh")
+atlas = ExtResource("6_cpkqv")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2s1u"]
-atlas = SubResource("CompressedTexture2D_1x0xh")
+atlas = ExtResource("6_cpkqv")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4otl7"]
-atlas = SubResource("CompressedTexture2D_1x0xh")
+atlas = ExtResource("6_cpkqv")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p68j0"]
-atlas = SubResource("CompressedTexture2D_1x0xh")
+atlas = ExtResource("6_cpkqv")
 region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4ifa"]
-atlas = SubResource("CompressedTexture2D_1x0xh")
+atlas = ExtResource("6_cpkqv")
 region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_daeh6"]
-atlas = SubResource("CompressedTexture2D_1x0xh")
+atlas = ExtResource("6_cpkqv")
 region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dr50b"]
-atlas = SubResource("CompressedTexture2D_1x0xh")
+atlas = ExtResource("6_cpkqv")
 region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwr0o"]
+atlas = ExtResource("9_wwu6c")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wyvm"]
+atlas = ExtResource("9_wwu6c")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6knn8"]
+atlas = ExtResource("9_wwu6c")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmxcw"]
+atlas = ExtResource("9_wwu6c")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb1ix"]
+atlas = ExtResource("9_wwu6c")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrsvw"]
+atlas = ExtResource("9_wwu6c")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbvsf"]
+atlas = ExtResource("9_wwu6c")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nobi"]
+atlas = ExtResource("9_wwu6c")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_760o5"]
+atlas = ExtResource("9_wwu6c")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqgpj"]
+atlas = ExtResource("9_wwu6c")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44m78"]
+atlas = ExtResource("9_wwu6c")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts7yu"]
+atlas = ExtResource("9_wwu6c")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr61u"]
+atlas = ExtResource("9_wwu6c")
+region = Rect2(1536, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2jya"]
+atlas = ExtResource("9_wwu6c")
+region = Rect2(1664, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nstho"]
 animations = [{
@@ -238,7 +292,57 @@ animations = [{
 "loop": true,
 "name": &"running",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwr0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wyvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6knn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmxcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb1ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrsvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbvsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nobi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_760o5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqgpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44m78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts7yu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr61u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2jya")
+}],
+"loop": false,
+"name": &"super",
+"speed": 8.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwu6c"]
+size = Vector2(85.5, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxhxl"]
 size = Vector2(44.25, 75.25)
@@ -317,7 +421,7 @@ sources/0 = SubResource("TileSetAtlasSource_4iphx")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u1b78"]
 
-[node name="Main3" type="Node"]
+[node name="Main" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -351,9 +455,9 @@ texture_filter = 1
 position = Vector2(66, 371.5)
 scale = Vector2(1.2968749, 1.2890624)
 sprite_frames = SubResource("SpriteFrames_nstho")
-animation = &"hurt"
+animation = &"super"
 autoplay = "default"
-frame = 2
+frame = 13
 frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="SceneObjects/Player"]
@@ -362,6 +466,10 @@ position_smoothing_enabled = true
 
 [node name="AttackArea" type="Area2D" parent="SceneObjects/Player"]
 position = Vector2(64, 416)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SceneObjects/Player/AttackArea"]
+position = Vector2(48.25, -32)
+shape = SubResource("RectangleShape2D_wwu6c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/Player/AttackArea"]
 position = Vector2(28, -1)
@@ -382,7 +490,7 @@ position = Vector2(522, 391)
 position = Vector2(571, 389)
 
 [node name="Collectable4" parent="SceneObjects/Collectables" instance=ExtResource("4_4iphx")]
-position = Vector2(1463, 399)
+position = Vector2(1849, 259)
 
 [node name="Finish" parent="SceneObjects" instance=ExtResource("5_jgkgd")]
 visible = false
@@ -400,12 +508,48 @@ tile_set = SubResource("TileSet_jgkgd")
 [node name="DogEnemy" parent="SceneObjects/Enemies" instance=ExtResource("11_cpkqv")]
 position = Vector2(974, 379)
 
+[node name="DogEnemy2" parent="SceneObjects/Enemies" instance=ExtResource("11_cpkqv")]
+position = Vector2(1705, 236)
+
 [node name="Area2D" type="Area2D" parent="SceneObjects"]
 position = Vector2(1735, 550)
 script = ExtResource("12_d1mwp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/Area2D"]
 shape = SubResource("WorldBoundaryShape2D_u1b78")
+
+[node name="Label" type="Label" parent="SceneObjects"]
+offset_left = 51.0
+offset_top = 139.0
+offset_right = 656.0
+offset_bottom = 239.0
+theme_override_fonts/font = ExtResource("12_u1b78")
+theme_override_font_sizes/font_size = 55
+text = "Welcome to the house of Hades ☠️"
+
+[node name="Label2" type="Label" parent="SceneObjects"]
+offset_left = 56.0
+offset_top = 263.0
+offset_right = 553.0
+offset_bottom = 317.0
+theme_override_font_sizes/font_size = 30
+text = "click / to attack and . to use super"
+
+[node name="Label3" type="Label" parent="SceneObjects"]
+offset_left = 709.0
+offset_top = 279.0
+offset_right = 1269.0
+offset_bottom = 333.0
+theme_override_font_sizes/font_size = 30
+text = "attacking comes at the cost of hearts..."
+
+[node name="Label4" type="Label" parent="SceneObjects"]
+offset_left = 1352.0
+offset_top = 86.0
+offset_right = 1938.0
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 30
+text = "collect all coins to move to the next level"
 
 [node name="UI" type="CanvasLayer" parent="."]
 

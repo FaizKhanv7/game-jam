@@ -1,0 +1,164 @@
+[gd_scene load_steps=16 format=3 uid="uid://m6u11apqm2vj"]
+
+[ext_resource type="Texture2D" uid="uid://tpwnfonfy352" path="res://Assets/winscreen.jpg" id="1_14u15"]
+[ext_resource type="Script" uid="uid://c8r835q6ipb6f" path="res://Scenes/play_again!.gd" id="2_j3ryr"]
+[ext_resource type="Script" uid="uid://6djd28ofy6sw" path="res://Scenes/go_back_to_menu.gd" id="3_rjluv"]
+[ext_resource type="Script" uid="uid://gxr8uk4608w" path="res://Scenes/exit_game.gd" id="4_gjtdd"]
+[ext_resource type="FontFile" uid="uid://ble8nehe03hgb" path="res://Fantasm and Secrets.ttf" id="5_uylih"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_14u15"]
+texture = ExtResource("1_14u15")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3iaq5"]
+bg_color = Color(0.6, 0.6, 0.6, 0.45490196)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my301"]
+bg_color = Color(0.6137038, 0, 0.13431552, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abjgy"]
+bg_color = Color(1, 1, 1, 0.26666668)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xu7hh"]
+bg_color = Color(0.6, 0.6, 0.6, 0.31764707)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmjk2"]
+bg_color = Color(0.61288697, 0, 0.14566177, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d75mr"]
+bg_color = Color(1, 1, 1, 0.21568628)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_be1gp"]
+bg_color = Color(0.6, 0.6, 0.6, 0.27450982)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kaxt3"]
+bg_color = Color(0.5931892, 0, 0.13974363, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2afhe"]
+bg_color = Color(1, 1, 1, 0.21568628)
+
+[node name="EndScreen" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -83.0
+offset_top = -62.0
+offset_right = 1254.0
+offset_bottom = 728.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_14u15")
+
+[node name="Button_Manager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSlider" type="VSlider" parent="Button_Manager"]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 8.0
+
+[node name="VSlider" type="VSlider" parent="Button_Manager/VSlider"]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 8.0
+
+[node name="VSlider" type="VSlider" parent="Button_Manager/VSlider/VSlider"]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 8.0
+
+[node name="Play Again!" type="Button" parent="Button_Manager/VSlider/VSlider/VSlider"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 443.0
+offset_top = 311.0
+offset_right = 731.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_3iaq5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_my301")
+theme_override_styles/hover = SubResource("StyleBoxFlat_abjgy")
+text = "Play Again!"
+script = ExtResource("2_j3ryr")
+
+[node name="Go back to Menu" type="Button" parent="Button_Manager/VSlider/VSlider/VSlider"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.625
+anchor_top = 2.125
+anchor_right = 9.625
+anchor_bottom = 2.125
+offset_left = 299.0
+offset_top = 354.0
+offset_right = 584.0
+offset_bottom = 407.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_xu7hh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pmjk2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d75mr")
+text = "Go Back to Main Menu!"
+script = ExtResource("3_rjluv")
+
+[node name="Exit Game" type="Button" parent="Button_Manager/VSlider/VSlider/VSlider"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 6.2250004
+anchor_bottom = 3.7500002
+offset_left = 453.0
+offset_top = 432.0
+offset_right = 639.4
+offset_bottom = 451.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_be1gp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kaxt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2afhe")
+text = "Exit Game "
+script = ExtResource("4_gjtdd")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 373.0
+offset_top = 156.0
+offset_right = 803.0
+offset_bottom = 260.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_uylih")
+theme_override_font_sizes/font_size = 55
+text = "You have saved Olympus"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button_Manager/VSlider/VSlider/VSlider/Play Again!" to="Button_Manager/VSlider/VSlider/VSlider/Exit Game" method="_on_play_again_pressed"]
+[connection signal="pressed" from="Button_Manager/VSlider/VSlider/VSlider/Go back to Menu" to="Button_Manager/VSlider/VSlider/VSlider/Exit Game" method="_on_go_back_to_menu_pressed"]
+[connection signal="pressed" from="Button_Manager/VSlider/VSlider/VSlider/Exit Game" to="Button_Manager/VSlider/VSlider/VSlider/Exit Game" method="_on_pressed"]

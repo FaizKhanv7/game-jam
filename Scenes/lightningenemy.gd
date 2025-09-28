@@ -17,7 +17,7 @@ func die():
 	if is_dead:
 		return
 	is_dead = true
-	var knockback_force = Vector2(-200, -150)  # push left and slightly up
+	var knockback_force = Vector2(200, -150)  # push left and slightly up
 	if sprite_2d.flip_h:  # if sprite is facing left, flip direction
 		knockback_force.x = 200
 	linear_velocity = knockback_force

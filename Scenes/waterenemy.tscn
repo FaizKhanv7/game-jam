@@ -1,0 +1,103 @@
+[gd_scene load_steps=15 format=3 uid="uid://dfn48borkyxho"]
+
+[ext_resource type="Script" uid="uid://8twitinqotqb" path="res://Scenes/waterenemy.gd" id="1_526fc"]
+[ext_resource type="Texture2D" uid="uid://c5d8w62q0hcm0" path="res://Assets/mendied.png" id="2_526fc"]
+[ext_resource type="Texture2D" uid="uid://bedcukyvq42vj" path="res://Assets/bettermen.png" id="3_m0fgp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcivn"]
+atlas = ExtResource("2_526fc")
+region = Rect2(0, 0, 121, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0fgp"]
+atlas = ExtResource("2_526fc")
+region = Rect2(121, 0, 121, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dtpm"]
+atlas = ExtResource("2_526fc")
+region = Rect2(242, 0, 121, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv1ow"]
+atlas = ExtResource("2_526fc")
+region = Rect2(363, 0, 121, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc3ri"]
+atlas = ExtResource("3_m0fgp")
+region = Rect2(0, 0, 273, 228)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nkac"]
+atlas = ExtResource("3_m0fgp")
+region = Rect2(273, 0, 273, 228)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqm1k"]
+atlas = ExtResource("3_m0fgp")
+region = Rect2(546, 0, 273, 228)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d08tm"]
+atlas = ExtResource("3_m0fgp")
+region = Rect2(819, 0, 273, 228)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jfxh1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcivn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0fgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dtpm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv1ow")
+}],
+"loop": false,
+"name": &"death",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc3ri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nkac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqm1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d08tm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_455hk"]
+size = Vector2(84, 116)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdvwv"]
+size = Vector2(101, 126)
+
+[node name="waterenemy" type="RigidBody2D"]
+script = ExtResource("1_526fc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1.000061, -0.99993896)
+scale = Vector2(0.71253306, 0.67276585)
+sprite_frames = SubResource("SpriteFrames_jfxh1")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_455hk")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, -5)
+shape = SubResource("RectangleShape2D_pdvwv")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D/CollisionShape2D" method="_on_area_2d_body_entered"]

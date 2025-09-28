@@ -1,8 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://455wycojhvpy"]
+[gd_scene load_steps=16 format=3 uid="uid://455wycojhvpy"]
 
+[ext_resource type="Texture2D" uid="uid://cy5tnrc16l7m2" path="res://Assets/697 Rhone Street.png" id="1_8yanq"]
 [ext_resource type="Script" uid="uid://c8r835q6ipb6f" path="res://Scenes/play_again!.gd" id="1_f2mtv"]
 [ext_resource type="FontFile" uid="uid://ble8nehe03hgb" path="res://Fantasm and Secrets.ttf" id="2_1gwaw"]
 [ext_resource type="Script" uid="uid://6djd28ofy6sw" path="res://Scenes/go_back_to_menu.gd" id="2_bhpww"]
+[ext_resource type="Script" uid="uid://gxr8uk4608w" path="res://Scenes/exit_game.gd" id="3_gdxnu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fi2y0"]
+texture = ExtResource("1_8yanq")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3iaq5"]
 bg_color = Color(0.6, 0.6, 0.6, 0.45490196)
@@ -45,6 +50,13 @@ bg_color = Color(1, 1, 1, 0.21568628)
 
 [node name="EndScreen" type="Node2D"]
 
+[node name="Panel" type="Panel" parent="."]
+offset_left = -111.0
+offset_top = -66.0
+offset_right = 1245.0
+offset_bottom = 709.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_fi2y0")
+
 [node name="Button_Manager" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
@@ -81,10 +93,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 379.0
-offset_top = 162.0
-offset_right = 667.0
-offset_bottom = 211.0
+offset_left = 443.0
+offset_top = 311.0
+offset_right = 731.0
+offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
@@ -101,10 +113,10 @@ anchor_left = 9.625
 anchor_top = 2.125
 anchor_right = 9.625
 anchor_bottom = 2.125
-offset_left = 235.0
-offset_top = 205.0
-offset_right = 520.0
-offset_bottom = 258.0
+offset_left = 299.0
+offset_top = 354.0
+offset_right = 584.0
+offset_bottom = 407.0
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_xu7hh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pmjk2")
@@ -117,23 +129,25 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 6.2250004
 anchor_bottom = 3.7500002
-offset_left = 389.0
-offset_top = 283.0
-offset_right = 575.4
-offset_bottom = 302.0
+offset_left = 453.0
+offset_top = 432.0
+offset_right = 639.4
+offset_bottom = 451.0
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_be1gp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kaxt3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2afhe")
 text = "Exit Game "
+script = ExtResource("3_gdxnu")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 309.0
-offset_right = 739.0
-offset_bottom = 104.0
+offset_left = 373.0
+offset_top = 156.0
+offset_right = 803.0
+offset_bottom = 260.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_1gwaw")
 theme_override_font_sizes/font_size = 55

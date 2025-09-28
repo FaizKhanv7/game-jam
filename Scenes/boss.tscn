@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://cecta686bhglo"]
+
+[ext_resource type="Script" uid="uid://dvxte6t18leod" path="res://Scenes/boss.gd" id="1_cxrok"]
+[ext_resource type="Texture2D" uid="uid://cqhgt1u7rlhay" path="res://Assets/finalbossDeath.png" id="2_ukjjc"]
+[ext_resource type="Texture2D" uid="uid://c3qwts5gt3xl5" path="res://Assets/idleboss.png" id="3_n725y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1ips"]
+atlas = ExtResource("2_ukjjc")
+region = Rect2(0, 0, 224, 278)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4fv4"]
+atlas = ExtResource("2_ukjjc")
+region = Rect2(224, 0, 224, 278)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkb0e"]
+atlas = ExtResource("2_ukjjc")
+region = Rect2(448, 0, 224, 278)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81lxm"]
+atlas = ExtResource("2_ukjjc")
+region = Rect2(672, 0, 224, 278)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nesy5"]
+atlas = ExtResource("3_n725y")
+region = Rect2(0, 0, 209, 264)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhya1"]
+atlas = ExtResource("3_n725y")
+region = Rect2(209, 0, 209, 264)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we22d"]
+atlas = ExtResource("3_n725y")
+region = Rect2(418, 0, 209, 264)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e1ips"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1ips")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4fv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkb0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81lxm")
+}],
+"loop": false,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nesy5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhya1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we22d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4fv4"]
+size = Vector2(130, 217)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkb0e"]
+size = Vector2(174, 247)
+
+[node name="Boss" type="RigidBody2D"]
+script = ExtResource("1_cxrok")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1815, 172)
+scale = Vector2(1.253588, 1.0021307)
+sprite_frames = SubResource("SpriteFrames_e1ips")
+animation = &"death"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1792, 169.5)
+shape = SubResource("RectangleShape2D_n4fv4")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1795, 167.5)
+shape = SubResource("RectangleShape2D_bkb0e")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D/CollisionShape2D" method="_on_area_2d_body_entered"]
