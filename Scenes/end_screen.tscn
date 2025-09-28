@@ -1,0 +1,121 @@
+[gd_scene load_steps=11 format=3 uid="uid://pkgt4ysg67rs"]
+
+[ext_resource type="Script" path="res://Scenes/ENDSCREEN.gd" id="1_f2mtv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3iaq5"]
+bg_color = Color(0.6, 0.6, 0.6, 0.45490196)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my301"]
+bg_color = Color(0.6137038, 0, 0.13431552, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abjgy"]
+bg_color = Color(1, 1, 1, 0.26666668)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xu7hh"]
+bg_color = Color(0.6, 0.6, 0.6, 0.31764707)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmjk2"]
+bg_color = Color(0.61288697, 0, 0.14566177, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d75mr"]
+bg_color = Color(1, 1, 1, 0.21568628)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_be1gp"]
+bg_color = Color(0.6, 0.6, 0.6, 0.27450982)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kaxt3"]
+bg_color = Color(0.5931892, 0, 0.13974363, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2afhe"]
+bg_color = Color(1, 1, 1, 0.21568628)
+
+[node name="EndScreen" type="Node2D"]
+
+[node name="Button_Manager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VSlider" type="VSlider" parent="Button_Manager"]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 8.0
+
+[node name="VSlider" type="VSlider" parent="Button_Manager/VSlider"]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 8.0
+
+[node name="VSlider" type="VSlider" parent="Button_Manager/VSlider/VSlider"]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 8.0
+
+[node name="Play Again!" type="Button" parent="Button_Manager/VSlider/VSlider/VSlider"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 379.0
+offset_top = 162.0
+offset_right = 667.0
+offset_bottom = 211.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_3iaq5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_my301")
+theme_override_styles/hover = SubResource("StyleBoxFlat_abjgy")
+text = "Play Again!"
+script = ExtResource("1_f2mtv")
+
+[node name="Go back to Menu" type="Button" parent="Button_Manager/VSlider/VSlider/VSlider"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.625
+anchor_top = 2.125
+anchor_right = 9.625
+anchor_bottom = 2.125
+offset_left = 235.0
+offset_top = 205.0
+offset_right = 520.0
+offset_bottom = 258.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_xu7hh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pmjk2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d75mr")
+text = "Go Back to Main Menu!"
+
+[node name="Exit Game" type="Button" parent="Button_Manager/VSlider/VSlider/VSlider"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 6.2250004
+anchor_bottom = 3.7500002
+offset_left = 389.0
+offset_top = 283.0
+offset_right = 575.4
+offset_bottom = 302.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_be1gp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kaxt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2afhe")
+text = "Exit Game "
+
+[connection signal="pressed" from="Button_Manager/VSlider/VSlider/VSlider/Play Again!" to="Button_Manager/VSlider/VSlider/VSlider/Exit Game" method="_on_play_again_pressed"]
+[connection signal="pressed" from="Button_Manager/VSlider/VSlider/VSlider/Go back to Menu" to="Button_Manager/VSlider/VSlider/VSlider/Exit Game" method="_on_go_back_to_menu_pressed"]
+[connection signal="pressed" from="Button_Manager/VSlider/VSlider/VSlider/Exit Game" to="Button_Manager/VSlider/VSlider/VSlider/Exit Game" method="_on_pressed"]
