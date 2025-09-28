@@ -1,9 +1,9 @@
-[gd_scene load_steps=33 format=4 uid="uid://cpnbmrrme4vx6"]
+[gd_scene load_steps=34 format=4 uid="uid://cpnbmrrme4vx6"]
 
 [ext_resource type="Script" uid="uid://cnkk40lnqk2fg" path="res://game_manager.gd" id="1_r6vdu"]
 [ext_resource type="Script" uid="uid://b281j0pecvres" path="res://player.gd" id="2_21xmu"]
-[ext_resource type="Texture2D" uid="uid://dwm3ddiyrt1df" path="res://Cloud Tileset.png" id="2_mhlpv"]
-[ext_resource type="PackedScene" uid="uid://b768rteou8asx" path="res://main_menu.tscn" id="5_onqnr"]
+[ext_resource type="Texture2D" uid="uid://dwm3ddiyrt1df" path="res://Assets/Cloud Tileset.png" id="2_mhlpv"]
+[ext_resource type="PackedScene" uid="uid://d1iductknuh4t" path="res://main_menu.tscn" id="5_onqnr"]
 [ext_resource type="PackedScene" uid="uid://bif2wbml7cl2u" path="res://Scenes/finish.tscn" id="5_qulpo"]
 [ext_resource type="Texture2D" uid="uid://s2x3i0q2hhld" path="res://Idle.png" id="6_mhlpv"]
 [ext_resource type="Texture2D" uid="uid://d8b37womo33b" path="res://Jump.png" id="7_ng020"]
@@ -243,6 +243,9 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ng020"]
+size = Vector2(44.25, 75.25)
+
 [node name="Main" type="Node"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -282,6 +285,13 @@ autoplay = "default"
 [node name="Camera2D" type="Camera2D" parent="SceneObjects/Player"]
 position = Vector2(-1939, 234.5)
 position_smoothing_enabled = true
+
+[node name="AttackArea" type="Area2D" parent="SceneObjects/Player"]
+position = Vector2(64, 416)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/Player/AttackArea"]
+position = Vector2(28, -1)
+shape = SubResource("RectangleShape2D_ng020")
 
 [node name="UI" type="CanvasLayer" parent="."]
 

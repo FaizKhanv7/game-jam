@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b44pd422dy8ob"
-path="res://.godot/imported/hades 2.jpg-c325ee4aaa0872f953405a9c53ff8b04.ctex"
+uid="uid://cjokdy0f40htb"
+path="res://.godot/imported/halfheart.png-aea71d954a41427b2db0b181fd875a05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hades 2.jpg"
-dest_files=["res://.godot/imported/hades 2.jpg-c325ee4aaa0872f953405a9c53ff8b04.ctex"]
+source_file="res://Assets/halfheart.png"
+dest_files=["res://.godot/imported/halfheart.png-aea71d954a41427b2db0b181fd875a05.ctex"]
 
 [params]
 
