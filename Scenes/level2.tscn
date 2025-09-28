@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://doj6og0wepgir"]
+[gd_scene load_steps=65 format=4 uid="uid://doj6og0wepgir"]
 
 [ext_resource type="Script" uid="uid://cnkk40lnqk2fg" path="res://game_manager.gd" id="1_r6vdu"]
 [ext_resource type="Script" uid="uid://b281j0pecvres" path="res://player.gd" id="2_21xmu"]
@@ -13,7 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://we4bti5wwmh3" path="res://Assets/Hurt.png" id="9_vn460"]
 [ext_resource type="Texture2D" uid="uid://bbltd1qviqgtj" path="res://Assets/heart.png" id="12_r8hce"]
 [ext_resource type="Script" uid="uid://dda8pm0fwq1se" path="res://Scenes/fall_area.gd" id="12_vn460"]
+[ext_resource type="PackedScene" uid="uid://bctokroikuymt" path="res://Scenes/lightningenemy.tscn" id="14_ca0bt"]
 [ext_resource type="PackedScene" uid="uid://yvxgaaurj68u" path="res://Scenes/collectable.tscn" id="14_r8hce"]
+[ext_resource type="Texture2D" uid="uid://763t3okqcaij" path="res://Assets/Flame_jet.png" id="15_yj6rp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ng020"]
 texture = ExtResource("2_mhlpv")
@@ -88,7 +90,9 @@ texture = ExtResource("2_mhlpv")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ng020")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca0bt"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r8hce"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orbd0"]
 size = Vector2(44, 88)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mcj63"]
@@ -199,7 +203,63 @@ region = Rect2(768, 0, 128, 128)
 atlas = ExtResource("8_vn2uo")
 region = Rect2(896, 0, 128, 128)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_yj6rp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwr0o"]
+atlas = ExtResource("15_yj6rp")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wyvm"]
+atlas = ExtResource("15_yj6rp")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6knn8"]
+atlas = ExtResource("15_yj6rp")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmxcw"]
+atlas = ExtResource("15_yj6rp")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb1ix"]
+atlas = ExtResource("15_yj6rp")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrsvw"]
+atlas = ExtResource("15_yj6rp")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbvsf"]
+atlas = ExtResource("15_yj6rp")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nobi"]
+atlas = ExtResource("15_yj6rp")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_760o5"]
+atlas = ExtResource("15_yj6rp")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqgpj"]
+atlas = ExtResource("15_yj6rp")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44m78"]
+atlas = ExtResource("15_yj6rp")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts7yu"]
+atlas = ExtResource("15_yj6rp")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr61u"]
+atlas = ExtResource("15_yj6rp")
+region = Rect2(1536, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2jya"]
+atlas = ExtResource("15_yj6rp")
+region = Rect2(1664, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5flq6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -306,12 +366,60 @@ animations = [{
 "loop": true,
 "name": &"running",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwr0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wyvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6knn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmxcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb1ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrsvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbvsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nobi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_760o5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqgpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44m78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts7yu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr61u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2jya")
+}],
+"loop": false,
+"name": &"super",
+"speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_orbd0"]
-size = Vector2(44.25, 75.25)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_051s1"]
+size = Vector2(85.5, 36)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r8hce"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_in4v8"]
+size = Vector2(44.25, 75.25)
 
 [node name="Main" type="Node"]
 
@@ -345,35 +453,6 @@ theme_override_font_sizes/font_size = 55
 text = "You have reached Mount Olumpus the  
 Home of the Great God Zeus.⚡️"
 
-[node name="Player" type="CharacterBody2D" parent="SceneObjects"]
-script = ExtResource("2_21xmu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/Player"]
-position = Vector2(46, 411.5)
-shape = SubResource("RectangleShape2D_ca0bt")
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="SceneObjects/Player"]
-texture_filter = 1
-position = Vector2(66, 371.5)
-scale = Vector2(1.2968749, 1.2890624)
-sprite_frames = SubResource("SpriteFrames_yj6rp")
-animation = &"hurt"
-autoplay = "default"
-
-[node name="Camera2D" type="Camera2D" parent="SceneObjects/Player"]
-position = Vector2(46, 410.5)
-position_smoothing_enabled = true
-
-[node name="AttackArea" type="Area2D" parent="SceneObjects/Player"]
-position = Vector2(64, 416)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/Player/AttackArea"]
-position = Vector2(28, -1)
-shape = SubResource("RectangleShape2D_orbd0")
-
-[node name="AttackTimer" type="Timer" parent="SceneObjects/Player"]
-one_shot = true
-
 [node name="Area2D" type="Area2D" parent="SceneObjects"]
 position = Vector2(890, 960)
 script = ExtResource("12_vn460")
@@ -395,6 +474,50 @@ position = Vector2(1925, 417)
 
 [node name="Collectable4" parent="SceneObjects/Collectables2" instance=ExtResource("14_r8hce")]
 position = Vector2(1501, 215)
+
+[node name="Enemies" type="Node" parent="SceneObjects"]
+
+[node name="lightningenemy" parent="SceneObjects/Enemies" instance=ExtResource("14_ca0bt")]
+position = Vector2(509, 416)
+
+[node name="lightningenemy2" parent="SceneObjects/Enemies" instance=ExtResource("14_ca0bt")]
+position = Vector2(903, 560)
+
+[node name="lightningenemy3" parent="SceneObjects/Enemies" instance=ExtResource("14_ca0bt")]
+position = Vector2(1689, 470)
+
+[node name="Player" type="CharacterBody2D" parent="SceneObjects"]
+script = ExtResource("2_21xmu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/Player"]
+position = Vector2(46, 411.5)
+shape = SubResource("RectangleShape2D_orbd0")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="SceneObjects/Player"]
+texture_filter = 1
+position = Vector2(66, 371.5)
+scale = Vector2(1.2968749, 1.2890624)
+sprite_frames = SubResource("SpriteFrames_5flq6")
+animation = &"super"
+autoplay = "default"
+
+[node name="Camera2D" type="Camera2D" parent="SceneObjects/Player"]
+position = Vector2(46, 410.5)
+position_smoothing_enabled = true
+
+[node name="AttackArea" type="Area2D" parent="SceneObjects/Player"]
+position = Vector2(64, 416)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SceneObjects/Player/AttackArea"]
+position = Vector2(48.25, -32)
+shape = SubResource("RectangleShape2D_051s1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/Player/AttackArea"]
+position = Vector2(28, -1)
+shape = SubResource("RectangleShape2D_in4v8")
+
+[node name="AttackTimer" type="Timer" parent="SceneObjects/Player"]
+one_shot = true
 
 [node name="UI" type="CanvasLayer" parent="."]
 
