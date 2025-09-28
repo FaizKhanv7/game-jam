@@ -1,14 +1,19 @@
-[gd_scene load_steps=34 format=4 uid="uid://cd0qbio05r8jh"]
+[gd_scene load_steps=48 format=4 uid="uid://bwqw2c3cmiq2q"]
 
 [ext_resource type="Script" uid="uid://cnkk40lnqk2fg" path="res://game_manager.gd" id="1_1x0xh"]
-[ext_resource type="Texture2D" uid="uid://6518yvgbvfx0" path="res://watertiles.png" id="2_1x0xh"]
+[ext_resource type="Texture2D" uid="uid://dojg01uo8syr1" path="res://watertiles.png" id="2_1x0xh"]
 [ext_resource type="PackedScene" uid="uid://bif2wbml7cl2u" path="res://Scenes/finish.tscn" id="3_csbjj"]
-[ext_resource type="PackedScene" uid="uid://bojojmgu02gkl" path="res://Scenes/level4.tscn" id="4_1x0xh"]
+[ext_resource type="PackedScene" uid="uid://n5jluhls8263" path="res://Scenes/level4.tscn" id="4_1x0xh"]
 [ext_resource type="Script" uid="uid://b281j0pecvres" path="res://player.gd" id="5_vn7r1"]
+[ext_resource type="Script" uid="uid://dda8pm0fwq1se" path="res://Scenes/fall_area.gd" id="6_fpsp3"]
 [ext_resource type="Texture2D" uid="uid://s2x3i0q2hhld" path="res://Idle.png" id="6_vwkqt"]
 [ext_resource type="Texture2D" uid="uid://d8b37womo33b" path="res://Jump.png" id="7_fpsp3"]
+[ext_resource type="Texture2D" uid="uid://ycojxjl0y72b" path="res://Attack_1.png" id="8_dw3di"]
 [ext_resource type="Texture2D" uid="uid://c8g8qr0kmaitd" path="res://Run.png" id="8_wffsm"]
 [ext_resource type="FontFile" uid="uid://ble8nehe03hgb" path="res://Fantasm and Secrets.ttf" id="9_h3ll2"]
+[ext_resource type="Texture2D" uid="uid://we4bti5wwmh3" path="res://Assets/Hurt.png" id="10_qia21"]
+[ext_resource type="PackedScene" uid="uid://yvxgaaurj68u" path="res://Scenes/collectable.tscn" id="13_fpsp3"]
+[ext_resource type="Texture2D" uid="uid://bbltd1qviqgtj" path="res://Assets/heart.png" id="13_tg0qr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h3ll2"]
 texture = ExtResource("2_1x0xh")
@@ -322,8 +327,26 @@ texture = ExtResource("2_1x0xh")
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_h3ll2")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhlpv"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p2sx0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tc3ri"]
 size = Vector2(44, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcj63"]
+atlas = ExtResource("8_dw3di")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af2a1"]
+atlas = ExtResource("8_dw3di")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocmlb"]
+atlas = ExtResource("8_dw3di")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlxhh"]
+atlas = ExtResource("8_dw3di")
+region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d1mwp"]
 atlas = ExtResource("6_vwkqt")
@@ -352,6 +375,18 @@ region = Rect2(640, 0, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_nolpu"]
 atlas = ExtResource("6_vwkqt")
 region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nstho"]
+atlas = ExtResource("10_qia21")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4bhf"]
+atlas = ExtResource("10_qia21")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfirt"]
+atlas = ExtResource("10_qia21")
+region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rxhxl"]
 atlas = ExtResource("7_fpsp3")
@@ -405,8 +440,25 @@ region = Rect2(768, 0, 128, 128)
 atlas = ExtResource("8_wffsm")
 region = Rect2(896, 0, 128, 128)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ng020"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_3nkac"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcj63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_af2a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocmlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlxhh")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 7.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d1mwp")
@@ -431,6 +483,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nstho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4bhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfirt")
+}],
+"loop": false,
+"name": &"hurt",
 "speed": 6.0
 }, {
 "frames": [{
@@ -483,11 +549,15 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqm1k"]
+size = Vector2(44.25, 75.25)
+
 [node name="Main" type="Node"]
 
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
 unique_name_in_owner = true
 script = ExtResource("1_1x0xh")
+hearts = [NodePath("../UI/Hearts/HBoxContainer/Heart"), NodePath("../UI/Hearts/HBoxContainer/Heart2"), NodePath("../UI/Hearts/HBoxContainer/Heart3"), NodePath("../UI/Hearts/HBoxContainer/Heart4"), NodePath("../UI/Hearts/HBoxContainer/Heart5")]
 
 [node name="SceneObjects" type="Node" parent="."]
 
@@ -503,26 +573,6 @@ tile_set = SubResource("TileSet_csbjj")
 position = Vector2(1963, 168)
 target_level = ExtResource("4_1x0xh")
 
-[node name="Player" type="CharacterBody2D" parent="SceneObjects"]
-position = Vector2(1994, 198)
-script = ExtResource("5_vn7r1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/Player"]
-position = Vector2(-1939, 235.5)
-shape = SubResource("RectangleShape2D_mhlpv")
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="SceneObjects/Player"]
-texture_filter = 1
-position = Vector2(-1919, 195.5)
-scale = Vector2(1.2968749, 1.2890624)
-sprite_frames = SubResource("SpriteFrames_ng020")
-animation = &"jumping"
-autoplay = "default"
-
-[node name="Camera2D" type="Camera2D" parent="SceneObjects/Player"]
-position = Vector2(-1939, 234.5)
-position_smoothing_enabled = true
-
 [node name="Label" type="Label" parent="SceneObjects"]
 offset_left = 2.0
 offset_top = 200.0
@@ -532,6 +582,56 @@ theme_override_fonts/font = ExtResource("9_h3ll2")
 theme_override_font_sizes/font_size = 55
 text = "You have entered
  The Sea of Posiden 🌊"
+
+[node name="Area2D" type="Area2D" parent="SceneObjects"]
+position = Vector2(879, 854)
+script = ExtResource("6_fpsp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/Area2D"]
+shape = SubResource("WorldBoundaryShape2D_p2sx0")
+
+[node name="Player" type="CharacterBody2D" parent="SceneObjects"]
+script = ExtResource("5_vn7r1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/Player"]
+position = Vector2(46, 411.5)
+shape = SubResource("RectangleShape2D_tc3ri")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="SceneObjects/Player"]
+texture_filter = 1
+position = Vector2(66, 371.5)
+scale = Vector2(1.2968749, 1.2890624)
+sprite_frames = SubResource("SpriteFrames_3nkac")
+animation = &"hurt"
+autoplay = "default"
+
+[node name="Camera2D" type="Camera2D" parent="SceneObjects/Player"]
+position = Vector2(46, 410.5)
+position_smoothing_enabled = true
+
+[node name="AttackArea" type="Area2D" parent="SceneObjects/Player"]
+position = Vector2(64, 416)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/Player/AttackArea"]
+position = Vector2(28, -1)
+shape = SubResource("RectangleShape2D_eqm1k")
+
+[node name="AttackTimer" type="Timer" parent="SceneObjects/Player"]
+one_shot = true
+
+[node name="Collectable" type="Node" parent="SceneObjects"]
+
+[node name="Collectable" parent="SceneObjects/Collectable" instance=ExtResource("13_fpsp3")]
+position = Vector2(697, 333)
+
+[node name="Collectable2" parent="SceneObjects/Collectable" instance=ExtResource("13_fpsp3")]
+position = Vector2(815, 494)
+
+[node name="Collectable3" parent="SceneObjects/Collectable" instance=ExtResource("13_fpsp3")]
+position = Vector2(1100, 299)
+
+[node name="Collectable4" parent="SceneObjects/Collectable" instance=ExtResource("13_fpsp3")]
+position = Vector2(1634, 170)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -549,6 +649,63 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
-text = "Points: 0"
+text = "Coins: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Hearts" type="Panel" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -918.0
+offset_top = 48.0
+offset_right = -650.0
+offset_bottom = 104.0
+grow_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Hearts"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -20.0
+offset_right = 64.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Heart" type="TextureRect" parent="UI/Hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("13_tg0qr")
+expand_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="UI/Hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("13_tg0qr")
+expand_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="UI/Hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("13_tg0qr")
+expand_mode = 2
+
+[node name="Heart4" type="TextureRect" parent="UI/Hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("13_tg0qr")
+expand_mode = 2
+
+[node name="Heart5" type="TextureRect" parent="UI/Hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("13_tg0qr")
+expand_mode = 2
+
+[connection signal="body_entered" from="SceneObjects/Area2D" to="SceneObjects/Area2D" method="_on_body_entered"]

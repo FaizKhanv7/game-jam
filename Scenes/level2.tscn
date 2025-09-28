@@ -1,9 +1,9 @@
-[gd_scene load_steps=47 format=4 uid="uid://doj6og0wepgir"]
+[gd_scene load_steps=48 format=4 uid="uid://doj6og0wepgir"]
 
 [ext_resource type="Script" uid="uid://cnkk40lnqk2fg" path="res://game_manager.gd" id="1_r6vdu"]
 [ext_resource type="Script" uid="uid://b281j0pecvres" path="res://player.gd" id="2_21xmu"]
 [ext_resource type="Texture2D" uid="uid://dwm3ddiyrt1df" path="res://Assets/Cloud Tileset.png" id="2_mhlpv"]
-[ext_resource type="PackedScene" path="res://Scenes/level3.tscn" id="4_mhlpv"]
+[ext_resource type="PackedScene" uid="uid://bwqw2c3cmiq2q" path="res://Scenes/level3.tscn" id="4_mhlpv"]
 [ext_resource type="PackedScene" uid="uid://bif2wbml7cl2u" path="res://Scenes/finish.tscn" id="5_qulpo"]
 [ext_resource type="Texture2D" uid="uid://s2x3i0q2hhld" path="res://Idle.png" id="6_mhlpv"]
 [ext_resource type="Texture2D" uid="uid://ycojxjl0y72b" path="res://Attack_1.png" id="7_mmf1u"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://we4bti5wwmh3" path="res://Assets/Hurt.png" id="9_vn460"]
 [ext_resource type="Texture2D" uid="uid://bbltd1qviqgtj" path="res://Assets/heart.png" id="12_r8hce"]
 [ext_resource type="Script" uid="uid://dda8pm0fwq1se" path="res://Scenes/fall_area.gd" id="12_vn460"]
+[ext_resource type="PackedScene" uid="uid://yvxgaaurj68u" path="res://Scenes/collectable.tscn" id="14_r8hce"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ng020"]
 texture = ExtResource("2_mhlpv")
@@ -314,9 +315,10 @@ size = Vector2(44.25, 75.25)
 
 [node name="Main" type="Node"]
 
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
 unique_name_in_owner = true
 script = ExtResource("1_r6vdu")
+hearts = [NodePath("../UI/Hearts/HBoxContainer/Heart"), NodePath("../UI/Hearts/HBoxContainer/Heart2"), NodePath("../UI/Hearts/HBoxContainer/Heart3"), NodePath("../UI/Hearts/HBoxContainer/Heart4"), NodePath("../UI/Hearts/HBoxContainer/Heart5")]
 
 [node name="SceneObjects" type="Node" parent="."]
 
@@ -329,6 +331,7 @@ tile_set = SubResource("TileSet_vn2uo")
 [node name="Collectables" type="Node" parent="SceneObjects"]
 
 [node name="Finish" parent="SceneObjects" instance=ExtResource("5_qulpo")]
+visible = false
 position = Vector2(1963, 168)
 target_level = ExtResource("4_mhlpv")
 
@@ -372,11 +375,26 @@ shape = SubResource("RectangleShape2D_orbd0")
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="SceneObjects"]
-position = Vector2(1735, 550)
+position = Vector2(890, 960)
 script = ExtResource("12_vn460")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/Area2D"]
+position = Vector2(1, 0)
 shape = SubResource("WorldBoundaryShape2D_r8hce")
+
+[node name="Collectables2" type="Node" parent="SceneObjects"]
+
+[node name="Collectable" parent="SceneObjects/Collectables2" instance=ExtResource("14_r8hce")]
+position = Vector2(343, 303)
+
+[node name="Collectable2" parent="SceneObjects/Collectables2" instance=ExtResource("14_r8hce")]
+position = Vector2(692, 628)
+
+[node name="Collectable3" parent="SceneObjects/Collectables2" instance=ExtResource("14_r8hce")]
+position = Vector2(1925, 417)
+
+[node name="Collectable4" parent="SceneObjects/Collectables2" instance=ExtResource("14_r8hce")]
+position = Vector2(1501, 215)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -394,7 +412,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
-text = "Points: 0/4"
+text = "Coins: 0/4"
 horizontal_alignment = 1
 vertical_alignment = 1
 

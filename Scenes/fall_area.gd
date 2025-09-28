@@ -8,5 +8,9 @@ func _ready() -> void:
 
 func _on_body_entered(body):
 	if body.name == "Player":
+		
 		body.global_position = Global.spawn_position
 		body.velocity = Vector2.ZERO   # reset movement
+	var game_manager = get_node("/root/Main/GameManager")  # adjust path if needed
+	if game_manager:
+		game_manager.decrease_health(2)

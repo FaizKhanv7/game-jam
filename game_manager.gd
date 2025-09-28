@@ -12,6 +12,12 @@ var points: int = 0
 
 func _ready() -> void:
 	_update_hearts()
+	# Make sure portal is initially unusable
+	portal.visible = false
+	portal.monitoring = false
+	portal.set_collision_layer(0)
+	portal.set_collision_mask(0)
+
 
 func decrease_health(amount: int = 1) -> void:
 	Global.lives = max(Global.lives - amount, 0)
@@ -38,5 +44,16 @@ func _update_hearts() -> void:
 func add_point() -> void:
 	points += 1
 	points_label.text = "Coins: " + str(points) + "/4"
+
 	if points >= 4:
-		portal.show()
+		# Enable portal
+		portal.visible = true
+		portal.monitoring = true
+		portal.set_collision_layer(1)  # or whatever layer your portal should be on
+		portal.set_collision_mask(1)   # or whatever masks it should detect
+	else:
+		# Keep portal unusable if coins are insufficient
+		portal.visible = false
+		portal.monitoring = false
+		portal.set_collision_layer(0)
+		portal.set_collision_mask(0)
